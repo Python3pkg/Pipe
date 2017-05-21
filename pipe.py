@@ -367,7 +367,7 @@ import sys
 try:
     import builtins
 except ImportError:
-    import __builtin__ as builtins
+    import builtins as builtins
 
 
 __author__ = 'Julien Palard <julien@eeple.fr>'
@@ -633,7 +633,7 @@ def to_type(x, t):
 
 @Pipe
 def transpose(iterable):
-    return zip(*iterable)
+    return list(zip(*iterable))
 
 chain_with = Pipe(itertools.chain)
 islice = Pipe(itertools.islice)
